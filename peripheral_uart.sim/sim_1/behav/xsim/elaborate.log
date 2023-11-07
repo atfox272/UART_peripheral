@@ -1,0 +1,46 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: L:/Application/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto e48e1545e48b490e8ce178a6db4a85ce --incr --debug typical --relax --mt 2 -L xil_defaultlib -L uvm -L unisims_ver -L unimacro_ver -L secureip --snapshot uart_peripheral_tb_behav xil_defaultlib.uart_peripheral_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/uart_peripheral.sv" Line 1. Module uart_peripheral(INTERNAL_CLOCK=11520000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/TX_controller.v" Line 8. Module TX_controller_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/RX_controller.v" Line 1. Module RX_controller_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/baudrate_generator.sv" Line 15. Module baudrate_generator(INTERNAL_CLOCK=11520000,GENERATE_BD_4TX=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/baudrate_generator.sv" Line 15. Module baudrate_generator(INTERNAL_CLOCK=11520000,GENERATE_BD_4TX=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/imports/RF_Transceiver-main/fifo_module.v" Line 21. Module fifo_module_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/imports/RF_Transceiver-main/fifo_module.v" Line 21. Module fifo_module_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/uart_peripheral.sv" Line 1. Module uart_peripheral(INTERNAL_CLOCK=11520000,RX_FLAG_TYPE=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/TX_controller.v" Line 8. Module TX_controller_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/RX_controller.v" Line 1. Module RX_controller_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/baudrate_generator.sv" Line 15. Module baudrate_generator(INTERNAL_CLOCK=11520000,GENERATE_BD_4TX=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/baudrate_generator.sv" Line 15. Module baudrate_generator(INTERNAL_CLOCK=11520000,GENERATE_BD_4TX=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/imports/RF_Transceiver-main/fifo_module.v" Line 21. Module fifo_module_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/uart_peripheral.sv" Line 1. Module uart_peripheral(INTERNAL_CLOCK=11520000) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/TX_controller.v" Line 8. Module TX_controller_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/RX_controller.v" Line 1. Module RX_controller_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/baudrate_generator.sv" Line 15. Module baudrate_generator(INTERNAL_CLOCK=11520000,GENERATE_BD_4TX=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/baudrate_generator.sv" Line 15. Module baudrate_generator(INTERNAL_CLOCK=11520000,GENERATE_BD_4TX=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/imports/RF_Transceiver-main/fifo_module.v" Line 21. Module fifo_module_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/imports/RF_Transceiver-main/fifo_module.v" Line 21. Module fifo_module_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/uart_peripheral.sv" Line 1. Module uart_peripheral(INTERNAL_CLOCK=11520000,RX_FLAG_TYPE=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/TX_controller.v" Line 8. Module TX_controller_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/RX_controller.v" Line 1. Module RX_controller_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/baudrate_generator.sv" Line 15. Module baudrate_generator(INTERNAL_CLOCK=11520000,GENERATE_BD_4TX=1'b1) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/baudrate_generator.sv" Line 15. Module baudrate_generator(INTERNAL_CLOCK=11520000,GENERATE_BD_4TX=1'b0) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/imports/RF_Transceiver-main/fifo_module.v" Line 21. Module fifo_module_default doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.TX_controller_default
+Compiling module xil_defaultlib.RX_controller_default
+Compiling module xil_defaultlib.baudrate_generator(INTERNAL_CLOC...
+Compiling module xil_defaultlib.baudrate_generator(INTERNAL_CLOC...
+Compiling module xil_defaultlib.fifo_module_default
+Compiling module xil_defaultlib.uart_peripheral(INTERNAL_CLOCK=1...
+Compiling module xil_defaultlib.uart_peripheral(INTERNAL_CLOCK=1...
+Compiling module xil_defaultlib.uart_peripheral_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot uart_peripheral_tb_behav

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="uart_peripheral_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="uart_peripheral_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1000fs"></ZoomStartTime>
+      <ZoomEndTime time="2421001fs"></ZoomEndTime>
+      <Cursor1Time time="219000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="231"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="35" />
+   <wvobject fp_name="/uart_peripheral_tb/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/RX_1" type="logic">
+      <obj_property name="ElementShortName">RX_1</obj_property>
+      <obj_property name="ObjectShortName">RX_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/TX_1" type="logic">
+      <obj_property name="ElementShortName">TX_1</obj_property>
+      <obj_property name="ObjectShortName">TX_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/TX_use_1" type="logic">
+      <obj_property name="ElementShortName">TX_use_1</obj_property>
+      <obj_property name="ObjectShortName">TX_use_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/data_in_1" type="array">
+      <obj_property name="ElementShortName">data_in_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_1[7:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_1/tx_controller/tx_state" type="array">
+      <obj_property name="ElementShortName">tx_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">tx_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_1/tx_controller/baudrate_clk_en" type="logic">
+      <obj_property name="ElementShortName">baudrate_clk_en</obj_property>
+      <obj_property name="ObjectShortName">baudrate_clk_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_1/tx_controller/transaction_state" type="array">
+      <obj_property name="ElementShortName">transaction_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">transaction_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_1/tx_controller/data_counter" type="array">
+      <obj_property name="ElementShortName">data_counter[2:0]</obj_property>
+      <obj_property name="ObjectShortName">data_counter[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_1/tx_controller/data_counter_load" type="array">
+      <obj_property name="ElementShortName">data_counter_load[2:0]</obj_property>
+      <obj_property name="ObjectShortName">data_counter_load[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/TX_flag_1" type="logic">
+      <obj_property name="ElementShortName">TX_flag_1</obj_property>
+      <obj_property name="ObjectShortName">TX_flag_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/TX_complete_1" type="logic">
+      <obj_property name="ElementShortName">TX_complete_1</obj_property>
+      <obj_property name="ObjectShortName">TX_complete_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/TX_available_1" type="logic">
+      <obj_property name="ElementShortName">TX_available_1</obj_property>
+      <obj_property name="ObjectShortName">TX_available_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/RX_use_1" type="logic">
+      <obj_property name="ElementShortName">RX_use_1</obj_property>
+      <obj_property name="ObjectShortName">RX_use_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/RX_flag_1" type="logic">
+      <obj_property name="ElementShortName">RX_flag_1</obj_property>
+      <obj_property name="ObjectShortName">RX_flag_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/RX_available_1" type="logic">
+      <obj_property name="ElementShortName">RX_available_1</obj_property>
+      <obj_property name="ObjectShortName">RX_available_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/data_out_1" type="array">
+      <obj_property name="ElementShortName">data_out_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out_1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/RX_2" type="logic">
+      <obj_property name="ElementShortName">RX_2</obj_property>
+      <obj_property name="ObjectShortName">RX_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_2/rx_baudrate_generator/baudrate_clk_en" type="logic">
+      <obj_property name="ElementShortName">baudrate_clk_en</obj_property>
+      <obj_property name="ObjectShortName">baudrate_clk_en</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_2/rx_controller/rx_state" type="array">
+      <obj_property name="ElementShortName">rx_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_2/rx_controller/transaction_state" type="array">
+      <obj_property name="ElementShortName">transaction_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">transaction_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_2/rx_controller/data_counter_load" type="array">
+      <obj_property name="ElementShortName">data_counter_load[2:0]</obj_property>
+      <obj_property name="ObjectShortName">data_counter_load[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/TX_2" type="logic">
+      <obj_property name="ElementShortName">TX_2</obj_property>
+      <obj_property name="ObjectShortName">TX_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/TX_use_2" type="logic">
+      <obj_property name="ElementShortName">TX_use_2</obj_property>
+      <obj_property name="ObjectShortName">TX_use_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/TX_flag_2" type="logic">
+      <obj_property name="ElementShortName">TX_flag_2</obj_property>
+      <obj_property name="ObjectShortName">TX_flag_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/TX_complete_2" type="logic">
+      <obj_property name="ElementShortName">TX_complete_2</obj_property>
+      <obj_property name="ObjectShortName">TX_complete_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/TX_available_2" type="logic">
+      <obj_property name="ElementShortName">TX_available_2</obj_property>
+      <obj_property name="ObjectShortName">TX_available_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/RX_use_2" type="logic">
+      <obj_property name="ElementShortName">RX_use_2</obj_property>
+      <obj_property name="ObjectShortName">RX_use_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/RX_flag_2" type="logic">
+      <obj_property name="ElementShortName">RX_flag_2</obj_property>
+      <obj_property name="ObjectShortName">RX_flag_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/RX_available_2" type="logic">
+      <obj_property name="ElementShortName">RX_available_2</obj_property>
+      <obj_property name="ObjectShortName">RX_available_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/data_in_2" type="array">
+      <obj_property name="ElementShortName">data_in_2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in_2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/data_out_2" type="array">
+      <obj_property name="ElementShortName">data_out_2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out_2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/rst_n" type="logic">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/INTERNAL_CLOCK" type="array">
+      <obj_property name="ElementShortName">INTERNAL_CLOCK[31:0]</obj_property>
+      <obj_property name="ObjectShortName">INTERNAL_CLOCK[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/DATA_WIDTH" type="array">
+      <obj_property name="ElementShortName">DATA_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_WIDTH[31:0]</obj_property>
+   </wvobject>
+</wave_config>
