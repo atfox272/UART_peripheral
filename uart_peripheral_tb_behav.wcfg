@@ -11,12 +11,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1000fs"></ZoomStartTime>
-      <ZoomEndTime time="2421001fs"></ZoomEndTime>
-      <Cursor1Time time="219000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="60750001fs"></ZoomEndTime>
+      <Cursor1Time time="1941000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="231"></NameColumnWidth>
+      <NameColumnWidth column_width="226"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="35" />
@@ -46,8 +46,10 @@
       <obj_property name="ObjectShortName">tx_state[2:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_1/tx_controller/baudrate_clk_en" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">baudrate_clk_en</obj_property>
       <obj_property name="ObjectShortName">baudrate_clk_en</obj_property>
+      <obj_property name="label">tx1_send</obj_property>
    </wvobject>
    <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_1/tx_controller/transaction_state" type="array">
       <obj_property name="ElementShortName">transaction_state[2:0]</obj_property>
@@ -94,8 +96,10 @@
       <obj_property name="ObjectShortName">RX_2</obj_property>
    </wvobject>
    <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_2/rx_baudrate_generator/baudrate_clk_en" type="logic">
+      <obj_property name="DisplayName">label</obj_property>
       <obj_property name="ElementShortName">baudrate_clk_en</obj_property>
       <obj_property name="ObjectShortName">baudrate_clk_en</obj_property>
+      <obj_property name="label">rx2_sample</obj_property>
    </wvobject>
    <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_2/rx_controller/rx_state" type="array">
       <obj_property name="ElementShortName">rx_state[2:0]</obj_property>

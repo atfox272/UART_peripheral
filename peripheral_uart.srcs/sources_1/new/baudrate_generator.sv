@@ -65,9 +65,9 @@ module baudrate_generator
     reg  [COUNTER_DIV_W - 1:0]  counter_div;
     logic[COUNTER_DIV_W - 1:0]  counter_div_load;
     logic[COUNTER_DIV_W - 1:0]  counter_div_decr;
+    
+    assign counter_div_decr = counter_div - 1;
     always_comb begin
-        assign counter_div_decr = counter_div - 1;
-        
         case(baudrate_mux) 
             BAUDRATE_4800_ENC: begin
                 counter_div_load <= COUNTER_BD4800 - 1;

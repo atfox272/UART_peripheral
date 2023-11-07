@@ -1,0 +1,160 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Tue Nov  7 12:39:59 2023
+| Host         : LAPTOP-UGQ0I2VJ running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file uart_peripheral_control_sets_placed.rpt
+| Design       : uart_peripheral
+| Device       : xc7z020
+--------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    82 |
+|    Minimum number of control sets                        |    82 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    82 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    82 |
+| >= 0 to < 4        |     9 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     4 |
+| >= 8 to < 10       |    67 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     1 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               4 |            3 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              49 |           22 |
+| Yes          | No                    | No                     |             536 |          174 |
+| Yes          | No                    | Yes                    |              24 |            8 |
+| Yes          | Yes                   | No                     |               9 |            9 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------+------------------------------------+-----------------------------+------------------+----------------+--------------+
+|         Clock Signal        |            Enable Signal           |       Set/Reset Signal      | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------+------------------------------------+-----------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG              | rx_controller/rx_buffer[3]_i_1_n_0 | rx_baudrate_generator/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | rx_controller/rx_buffer[0]_i_1_n_0 | rx_baudrate_generator/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | rx_controller/rx_buffer[2]_i_1_n_0 | rx_baudrate_generator/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | rx_controller/rx_buffer[5]_i_1_n_0 | rx_baudrate_generator/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | rx_controller/rx_buffer[7]_i_1_n_0 | rx_baudrate_generator/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | rx_controller/rx_buffer[6]_i_1_n_0 | rx_baudrate_generator/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | rx_controller/rx_buffer[4]_i_1_n_0 | rx_baudrate_generator/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | rx_controller/rx_buffer[1]_i_1_n_0 | rx_baudrate_generator/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              | tx_controller/TX_reg_i_1_n_0       | rx_baudrate_generator/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG              |                                    |                             |                3 |              4 |         1.33 |
+|  TX_use_IBUF_BUFG           | fifo_tx/rear_queue_reg[5]_0[0]     | rx_baudrate_generator/rst_n |                2 |              6 |         3.00 |
+|  RX_use_IBUF_BUFG           | fifo_rx/E[0]                       | rx_baudrate_generator/rst_n |                2 |              6 |         3.00 |
+|  tx_controller/TX_flag_OBUF | fifo_tx/front_queue[5]_i_1_n_0     | rx_baudrate_generator/rst_n |                2 |              6 |         3.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/rear_queue[5]_i_1_n_0      | rx_baudrate_generator/rst_n |                2 |              6 |         3.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[4][7]_i_1__0_n_0     |                             |                3 |              8 |         2.67 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[12][7]_i_1__0_n_0    |                             |                1 |              8 |         8.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[14][7]_i_1__0_n_0    |                             |                4 |              8 |         2.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[27][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[5][7]_i_1__0_n_0     |                             |                3 |              8 |         2.67 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[30][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[19][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[15][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[23][7]_i_1__0_n_0    |                             |                3 |              8 |         2.67 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[10][7]_i_1__0_n_0    |                             |                5 |              8 |         1.60 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[24][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[26][7]_i_1__0_n_0    |                             |                4 |              8 |         2.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[21][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[13][7]_i_1__0_n_0    |                             |                5 |              8 |         1.60 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[25][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[18][7]_i_1__0_n_0    |                             |                1 |              8 |         8.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[2][7]_i_1__0_n_0     |                             |                3 |              8 |         2.67 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[1][7]_i_1__0_n_0     |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[29][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[20][7]_i_1__0_n_0    |                             |                1 |              8 |         8.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[28][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[11][7]_i_1__0_n_0    |                             |                1 |              8 |         8.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[16][7]_i_1__0_n_0    |                             |                1 |              8 |         8.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[6][7]_i_1__0_n_0     |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[7][7]_i_1__0_n_0     |                             |                3 |              8 |         2.67 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[8][7]_i_1__0_n_0     |                             |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG              | fifo_tx/E[0]                       |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[9][7]_i_1__0_n_0     |                             |                8 |              8 |         1.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[22][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[32][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[31][7]_i_1__0_n_0    |                             |                8 |              8 |         1.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[0][7]_i_1__0_n_0     |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[24][7]_i_1_n_0       |                             |                3 |              8 |         2.67 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[25][7]_i_1_n_0       |                             |                1 |              8 |         8.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[10][7]_i_1_n_0       |                             |                1 |              8 |         8.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[19][7]_i_1_n_0       |                             |                1 |              8 |         8.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[29][7]_i_1_n_0       |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[2][7]_i_1_n_0        |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[30][7]_i_1_n_0       |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[31][7]_i_1_n_0       |                             |                8 |              8 |         1.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[18][7]_i_1_n_0       |                             |                1 |              8 |         8.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[21][7]_i_1_n_0       |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[22][7]_i_1_n_0       |                             |                1 |              8 |         8.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[0][7]_i_1_n_0        |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[26][7]_i_1_n_0       |                             |                4 |              8 |         2.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[1][7]_i_1_n_0        |                             |                2 |              8 |         4.00 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[3][7]_i_1__0_n_0     |                             |                3 |              8 |         2.67 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[15][7]_i_1_n_0       |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[20][7]_i_1_n_0       |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[13][7]_i_1_n_0       |                             |                1 |              8 |         8.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[14][7]_i_1_n_0       |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[17][7]_i_1_n_0       |                             |                3 |              8 |         2.67 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[23][7]_i_1_n_0       |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[11][7]_i_1_n_0       |                             |                1 |              8 |         8.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[27][7]_i_1_n_0       |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[28][7]_i_1_n_0       |                             |                4 |              8 |         2.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[12][7]_i_1_n_0       |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[6][7]_i_1_n_0        |                             |                3 |              8 |         2.67 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[9][7]_i_1_n_0        |                             |                8 |              8 |         1.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[7][7]_i_1_n_0        |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[8][7]_i_1_n_0        |                             |                3 |              8 |         2.67 |
+|  TX_use_IBUF_BUFG           | fifo_tx/queue[17][7]_i_1__0_n_0    |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[5][7]_i_1_n_0        |                             |                3 |              8 |         2.67 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[3][7]_i_1_n_0        |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[4][7]_i_1_n_0        |                             |                5 |              8 |         1.60 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[32][7]_i_1_n_0       |                             |                2 |              8 |         4.00 |
+|  fifo_wr_reg_BUFG           | fifo_rx/queue[16][7]_i_1_n_0       |                             |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG              |                                    | rx_baudrate_generator/rst_n |               22 |             49 |         2.23 |
++-----------------------------+------------------------------------+-----------------------------+------------------+----------------+--------------+
+
+

@@ -177,6 +177,81 @@ module uart_peripheral_tb;
     end 
     
     initial begin
+        #20;
+        #1;
+        data_in_2 <= 8'h00;
+        #1 TX_use_2 <= 1;
+        #2 TX_use_2 <= 0;
+        
+        #1;
+        data_in_2 <= 8'h11;
+        #1 TX_use_2 <= 1;
+        #2 TX_use_2 <= 0;
+        
+        #1;
+        data_in_2 <= 8'h22;
+        #1 TX_use_2 <= 1;
+        #2 TX_use_2 <= 0;
+        
+        #1;
+        data_in_2 <= 8'h33;
+        #1 TX_use_2 <= 1;
+        #2 TX_use_2 <= 0;
+        
+        #1;
+        data_in_2 <= 8'h44;
+        #1 TX_use_2 <= 1;
+        #2 TX_use_2 <= 0;
+        
+        #1;
+        data_in_2 <= 8'h55;
+        #1 TX_use_2 <= 1;
+        #2 TX_use_2 <= 0;
+        
+        #1;
+        data_in_2 <= 8'h66;
+        #1 TX_use_2 <= 1;
+        #2 TX_use_2 <= 0;
+        
+        #1;
+        data_in_2 <= 8'h77;
+        #1 TX_use_2 <= 1;
+        #2 TX_use_2 <= 0;
+    end 
+    initial begin
+        #200000;
+        #100;
+        #1 RX_use_1 <= 1;
+        #2 RX_use_1 <= 0;
+        
+        #5;
+        #1 RX_use_1 <= 1;
+        #2 RX_use_1 <= 0;
+        #5;
+        #1 RX_use_1 <= 1;
+        #2 RX_use_1 <= 0;
+        #5;
+        #1 RX_use_1 <= 1;
+        #2 RX_use_1 <= 0;
+        #5;
+        #1 RX_use_1 <= 1;
+        #2 RX_use_1 <= 0;
+        #5;
+        #1 RX_use_1 <= 1;
+        #2 RX_use_1 <= 0;
+        #5;
+        #1 RX_use_1 <= 1;
+        #2 RX_use_1 <= 0;
+        #5;
+        #1 RX_use_1 <= 1;
+        #2 RX_use_1 <= 0;
+        #5;
+        #1 RX_use_1 <= 1;
+        #2 RX_use_1 <= 0;
+    end 
+    initial begin
+        #100000;
+        #100000;
         #100000;
         $stop;
     end 
