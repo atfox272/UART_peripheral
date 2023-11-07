@@ -11,22 +11,18 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="60750001fs"></ZoomEndTime>
-      <Cursor1Time time="1941000fs"></Cursor1Time>
+      <ZoomStartTime time="653000fs"></ZoomStartTime>
+      <ZoomEndTime time="869653001fs"></ZoomEndTime>
+      <Cursor1Time time="200653000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="226"></NameColumnWidth>
+      <NameColumnWidth column_width="221"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="35" />
+   <WVObjectSize size="38" />
    <wvobject fp_name="/uart_peripheral_tb/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/uart_peripheral_tb/RX_1" type="logic">
-      <obj_property name="ElementShortName">RX_1</obj_property>
-      <obj_property name="ObjectShortName">RX_1</obj_property>
    </wvobject>
    <wvobject fp_name="/uart_peripheral_tb/TX_1" type="logic">
       <obj_property name="ElementShortName">TX_1</obj_property>
@@ -82,6 +78,22 @@
    <wvobject fp_name="/uart_peripheral_tb/RX_flag_1" type="logic">
       <obj_property name="ElementShortName">RX_flag_1</obj_property>
       <obj_property name="ObjectShortName">RX_flag_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/RX_1" type="logic">
+      <obj_property name="ElementShortName">RX_1</obj_property>
+      <obj_property name="ObjectShortName">RX_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_1/rx_controller/rx_state" type="array">
+      <obj_property name="ElementShortName">rx_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">rx_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_1/rx_controller/transaction_state" type="array">
+      <obj_property name="ElementShortName">transaction_state[2:0]</obj_property>
+      <obj_property name="ObjectShortName">transaction_state[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_1/rx_controller/baudrate_clk_en" type="logic">
+      <obj_property name="ElementShortName">baudrate_clk_en</obj_property>
+      <obj_property name="ObjectShortName">baudrate_clk_en</obj_property>
    </wvobject>
    <wvobject fp_name="/uart_peripheral_tb/RX_available_1" type="logic">
       <obj_property name="ElementShortName">RX_available_1</obj_property>

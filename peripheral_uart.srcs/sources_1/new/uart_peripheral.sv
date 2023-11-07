@@ -2,7 +2,7 @@ module uart_peripheral
     #(
     parameter INTERNAL_CLOCK        = 125000000,
     // FIFO type
-    parameter RX_FLAG_TYPE          = 1,    // 1-internal fifo  2-external fifo
+    parameter RX_FLAG_TYPE          = 1,    // 1-internal fifo  0-external fifo
     
     parameter DATA_WIDTH            = 8,
     parameter FIFO_DEPTH            = 32,

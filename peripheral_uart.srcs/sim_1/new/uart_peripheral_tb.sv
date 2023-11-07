@@ -118,7 +118,7 @@ module uart_peripheral_tb;
     initial begin
         clk <= 0;
         RX_config_register <= 8'b00100011;  // 9600     -   8N1
-        TX_config_register <= 8'b11100011;  // 115200   -   8N1
+        TX_config_register <= 8'b11101011;  // 115200   -   8O1
         TX_use_1 <= 0;
         data_in_1 <= 8'h00;
         TX_use_2 <= 0;
@@ -174,6 +174,13 @@ module uart_peripheral_tb;
         data_in_1 <= 8'h23;
         #1 TX_use_1 <= 1;
         #2 TX_use_1 <= 0;
+        
+        for(int i = 0; i < 20; i = i + 1) begin
+            #1;
+            data_in_1 <= 8'hFF - i;
+            #1 TX_use_1 <= 1;
+            #2 TX_use_1 <= 0;
+        end
     end 
     
     initial begin

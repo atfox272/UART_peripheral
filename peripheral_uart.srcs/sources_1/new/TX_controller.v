@@ -195,7 +195,7 @@ module TX_controller
                     TX_reg <= STOP_BIT;
                 end
                 STOP_STATE: begin
-                    if(stop_bit_counter == {1{1'b1}}) begin    // Overflow
+                    if(stop_bit_counter == {1{1'b0}}) begin    // Overflow
                         transaction_state <= IDLE_STATE;
                         stop_bit_counter <= stop_bit_counter_load;
                         transaction_stop_toggle <= transaction_start_toggle;
