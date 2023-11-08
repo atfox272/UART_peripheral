@@ -97,7 +97,7 @@ module uart_peripheral
         assign RX_flag = fifo_rx_wr;
         assign data_out = data_out_rx;
     end 
-    assign RX_available = ~fifo_rx_empty;
+    assign RX_available = ~transaction_en_rx;   // RX is IDLE (RX is not in transaction)
     TX_controller
         #(
         ) tx_controller (

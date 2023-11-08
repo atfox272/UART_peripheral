@@ -1,0 +1,3 @@
+Vivado Simulator 2020.2
+Time resolution is 1 ps
+$stop called at time : 300 us : File "L:/Projects/peripheral_uart/peripheral_uart.srcs/sim_1/new/uart_peripheral_tb.sv" Line 263
