@@ -137,7 +137,7 @@ module baudrate_generator
                 end 
             end 
             else begin
-                counter_div <= (counter_div_load >> 1);  // Load 1/2 cycle of baudrate at start bit (sample stable data)
+                counter_div <= {1'b0, counter_div_load[COUNTER_DIV_W - 1:1]};  // Load 1/2 cycle of baudrate at start bit (sample stable data)
                 baudrate_clk_en <= 0;
             end
         end 

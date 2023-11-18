@@ -32,6 +32,7 @@ module RX_controller
     input                               RX,
     // Baudrate interconnect
     input                               baudrate_clk_en,
+//    (* keep = "true" *)
     output                              transaction_en,
     // FIFO interconnect
     output[DATA_WIDTH - 1:0]            data_out_rx,
@@ -66,6 +67,9 @@ module RX_controller
     reg                             fifo_wr_reg;
     
     reg [DATA_COUNTER_WIDTH - 1:0]  data_counter;
+    wire[DATA_COUNTER_WIDTH - 1:0]  buffer_pointer_msb_first;
+    wire[DATA_COUNTER_WIDTH - 1:0]  buffer_pointer_lsb_first;
+    wire[DATA_COUNTER_WIDTH - 1:0]  buffer_pointer;
     wire[DATA_COUNTER_WIDTH - 1:0]  data_counter_decr;
     reg                             stop_bit_counter;
     wire                            stop_bit_counter_decr;
@@ -81,8 +85,11 @@ module RX_controller
     assign data_out_rx = rx_buffer;
     assign data_counter_decr = data_counter - 1;
     assign stop_bit_counter_decr = stop_bit_counter - 1;
-    assign fifo_wr = fifo_wr_reg;
+//    assign fifo_wr = fifo_wr_reg;
     assign valid_data_flag = (parity_bit_load == parity_buffer) | (parity_option == PARITY_NOT_ENCODE);
+    assign buffer_pointer_msb_first = data_counter;
+    assign buffer_pointer_lsb_first = ~data_counter;
+    assign buffer_pointer = (1'b1) ? buffer_pointer_lsb_first : buffer_pointer_msb_first;
     // Configuration transaction
     always_comb begin
         case(data_width_option) 
@@ -124,12 +131,12 @@ module RX_controller
             end
         endcase
     end
-    
+    assign fifo_wr = (!transaction_en) & (rx_state == RECV_STATE);
     always @(posedge clk) begin
         if(!rst_n) begin
             rx_state <= IDLE_STATE;
             transaction_start_toggle <= 0;
-            fifo_wr_reg <= 0;
+//            fifo_wr_reg <= 0;
         end 
         else begin
             case(rx_state) 
@@ -138,12 +145,12 @@ module RX_controller
                         rx_state <= RECV_STATE;
                         transaction_start_toggle <= ~transaction_stop_toggle;
                     end
-                    fifo_wr_reg <= 0;
+//                    fifo_wr_reg <= 0;
                 end 
                 RECV_STATE: begin
                     if(!transaction_en) begin
                         rx_state <= IDLE_STATE;
-                        fifo_wr_reg <= 1;
+//                        fifo_wr_reg <= 1;
                     end 
                 end
             endcase
@@ -166,7 +173,7 @@ module RX_controller
                 end 
                 START_BIT_STATE: begin
                     transaction_state <= DATA_STATE;
-                    rx_buffer[data_counter] <= RX; 
+                    rx_buffer[buffer_pointer] <= RX; 
                     data_counter <= data_counter_decr;
                 end 
                 DATA_STATE: begin
@@ -182,7 +189,7 @@ module RX_controller
                         data_counter <= data_counter_load;
                     end 
                     else begin
-                        rx_buffer[data_counter] <= RX; 
+                        rx_buffer[buffer_pointer] <= RX; 
                         data_counter <= data_counter_decr;
                     end
                 end 
@@ -192,6 +199,14 @@ module RX_controller
                 end 
                 STOP_STATE: begin
                 // Don't care stop bit
+                // Confirm transaction is STOP
+                transaction_state <= IDLE_STATE;
+                transaction_stop_toggle <= transaction_start_toggle;
+                end
+                default: begin
+                // Confirm transaction is STOP
+                transaction_state <= IDLE_STATE;
+                transaction_stop_toggle <= transaction_start_toggle;
                 end
             endcase 
         end 

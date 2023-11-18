@@ -11,12 +11,12 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="653000fs"></ZoomStartTime>
-      <ZoomEndTime time="869653001fs"></ZoomEndTime>
-      <Cursor1Time time="200653000fs"></Cursor1Time>
+      <ZoomStartTime time="2440334fs"></ZoomStartTime>
+      <ZoomEndTime time="124940335fs"></ZoomEndTime>
+      <Cursor1Time time="22857000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="221"></NameColumnWidth>
+      <NameColumnWidth column_width="216"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="38" />
@@ -35,7 +35,6 @@
    <wvobject fp_name="/uart_peripheral_tb/data_in_1" type="array">
       <obj_property name="ElementShortName">data_in_1[7:0]</obj_property>
       <obj_property name="ObjectShortName">data_in_1[7:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/uart_peripheral_tb/uart_peripheral_1/tx_controller/tx_state" type="array">
       <obj_property name="ElementShortName">tx_state[2:0]</obj_property>

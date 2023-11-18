@@ -1,0 +1,10 @@
+Exception at PC 0x00007FF99463780D
+Attemped to write at address 0x00007FF9944F1000
+Printing stacktrace...
+
+[0] (isl::iostreams::xp_vhls_version::`default constructor closure'+0x467d) [0x00007FF99463780D]
+[1] (isl::iostreams::xp_vhls_version::`default constructor closure'+0x467d) [0x00007FF99463780D]
+[2]  [0x00007FF9944F1000]
+[3]  [0x000000000034EE00]
+Done
+Exception at PC 0x00007FFA33C7565C

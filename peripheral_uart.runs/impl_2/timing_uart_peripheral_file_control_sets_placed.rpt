@@ -1,0 +1,102 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
+| Date         : Fri Nov 17 17:54:16 2023
+| Host         : LAPTOP-UGQ0I2VJ running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file timing_uart_peripheral_file_control_sets_placed.rpt
+| Design       : timing_uart_peripheral_file
+| Device       : xc7z020
+--------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    24 |
+|    Minimum number of control sets                        |    24 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    93 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    24 |
+| >= 0 to < 4        |    10 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     5 |
+| >= 8 to < 10       |     2 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     4 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               4 |            3 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |              53 |           22 |
+| Yes          | No                    | No                     |               8 |            2 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |              42 |           28 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                    Enable Signal                   |                  Set/Reset Signal                  | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[7]_i_2_n_0 | uart_peripheral/rx_controller/rx_buffer[7]_i_1_n_0 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[2]_i_1_n_0 | uart_peripheral/rx_controller/rx_buffer[7]_i_1_n_0 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[5]_i_1_n_0 | uart_peripheral/rx_controller/rx_buffer[7]_i_1_n_0 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/parity_buffer1_out   | uart_peripheral/rx_controller/rx_buffer[7]_i_1_n_0 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[1]_i_1_n_0 | uart_peripheral/rx_controller/rx_buffer[7]_i_1_n_0 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[4]_i_1_n_0 | uart_peripheral/rx_controller/rx_buffer[7]_i_1_n_0 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[0]_i_1_n_0 | uart_peripheral/rx_controller/rx_buffer[7]_i_1_n_0 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[6]_i_1_n_0 | uart_peripheral/rx_controller/rx_buffer[7]_i_1_n_0 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[3]_i_1_n_0 | uart_peripheral/rx_controller/rx_buffer[7]_i_1_n_0 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/tx_controller/TX_reg1_out          | uart_peripheral/tx_controller/TX_reg_i_1_n_0       |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG |                                                    |                                                    |                3 |              4 |         1.33 |
+|  clk_IBUF_BUFG |                                                    | rst_IBUF                                           |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | uart_peripheral/fifo_tx/rd_addr_reg0               | uart_peripheral/fifo_tx/wr_addr[5]_i_1_n_0         |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG | uart_peripheral/fifo_tx/wr_addr_reg0               | uart_peripheral/fifo_tx/wr_addr[5]_i_1_n_0         |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG | uart_peripheral/fifo_rx/rd_addr_reg0               | uart_peripheral/fifo_rx/wr_addr[5]_i_1_n_0         |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG | uart_peripheral/fifo_rx/wr_addr_reg0               | uart_peripheral/fifo_rx/wr_addr[5]_i_1_n_0         |                4 |              6 |         1.50 |
+|  clk_IBUF_BUFG |                                                    | uart_peripheral/rx_controller/rx_buffer[7]_i_1_n_0 |                2 |              7 |         3.50 |
+|  clk_IBUF_BUFG | uart_peripheral/tx_controller/tx_buffer[7]_i_1_n_0 |                                                    |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | buffer[7]_i_1_n_0                                  | rst_IBUF                                           |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG |                                                    | uart_peripheral/tx_controller/TX_reg_i_1_n_0       |                5 |             10 |         2.00 |
+|  clk_IBUF_BUFG |                                                    | uart_peripheral/tx_baudrate_generator/p_0_in       |                7 |             16 |         2.29 |
+|  clk_IBUF_BUFG |                                                    | uart_peripheral/rx_baudrate_generator/p_0_in       |                6 |             16 |         2.67 |
+|  clk_IBUF_BUFG | uart_peripheral/fifo_tx/p_1_in__0                  |                                                    |                2 |             16 |         8.00 |
+|  clk_IBUF_BUFG | uart_peripheral/fifo_rx/p_1_in__0                  |                                                    |                2 |             16 |         8.00 |
++----------------+----------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
+
+

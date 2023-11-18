@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../peripheral_uart.srcs/sources_1/new/RX_controller.v" \
+"../../../../peripheral_uart.srcs/sources_1/new/TX_controller.v" \
+"../../../../peripheral_uart.srcs/sources_1/new/baudrate_generator.sv" \
+"../../../../../fifo_sync/fifo_sync.srcs/sources_1/new/fifo_sync.sv" \
+"../../../../peripheral_uart.srcs/sources_1/new/timing_uart_peripheral_file.sv" \
+"../../../../peripheral_uart.srcs/sources_1/new/uart_peripheral.sv" \
+"../../../../peripheral_uart.srcs/sim_1/new/timing_uart_tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

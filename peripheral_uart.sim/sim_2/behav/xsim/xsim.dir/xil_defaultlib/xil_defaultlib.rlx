@@ -1,0 +1,15 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+L:/Projects/fifo_sync/fifo_sync.srcs/sources_1/new/fifo_sync.sv,1700209663,systemVerilog,,L:/Projects/fifo_sync/fifo_sync.srcs/sources_1/new/sync_fifo.sv,,async_fifo,,uvm,,,,,,
+L:/Projects/fifo_sync/fifo_sync.srcs/sources_1/new/sync_fifo.sv,1700214569,systemVerilog,,L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/timing_uart_peripheral_file.sv,,sync_fifo,,uvm,,,,,,
+L:/Projects/peripheral_uart/peripheral_uart.sim/sim_2/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,uvm,,,,,,
+L:/Projects/peripheral_uart/peripheral_uart.srcs/sim_1/new/timing_uart_tb.sv,1700217974,systemVerilog,,,,timing_uart_tb,,uvm,,,,,,
+L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/imports/RF_Transceiver-main/fifo_module.v,1699327737,verilog,,L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/imports/new/real_time.v,,fifo_module,,uvm,,,,,,
+L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/imports/new/real_time.v,1699196992,verilog,,,,real_time,,uvm,,,,,,
+L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/RX_controller.v,1699536319,systemVerilog,,L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/TX_controller.v,,RX_controller,,uvm,,,,,,
+L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/TX_controller.v,1700211519,systemVerilog,,L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/baudrate_generator.sv,,TX_controller,,uvm,,,,,,
+L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/baudrate_generator.sv,1699335504,systemVerilog,,L:/Projects/fifo_sync/fifo_sync.srcs/sources_1/new/sync_fifo.sv,,baudrate_generator,,uvm,,,,,,
+L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/timing_uart_peripheral_file.sv,1700216831,systemVerilog,,L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/uart_peripheral.sv,,timing_uart_peripheral_file,,uvm,,,,,,
+L:/Projects/peripheral_uart/peripheral_uart.srcs/sources_1/new/uart_peripheral.sv,1700214996,systemVerilog,,L:/Projects/peripheral_uart/peripheral_uart.srcs/sim_1/new/timing_uart_tb.sv,,uart_peripheral,,uvm,,,,,,

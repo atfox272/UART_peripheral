@@ -1,3 +1,4 @@
+`define DEBUG
 module uart_peripheral
     #(
     parameter INTERNAL_CLOCK        = 125000000,
@@ -46,6 +47,11 @@ module uart_peripheral
     output[DATA_WIDTH - 1:0]    data_out,
     
     input                       rst_n
+    
+    `ifdef DEBUG
+//    ,output                      baudrate_clk_en_rx_wire
+//    ,output                      RX_full
+    `endif
     );
     // Baudrate generator TX
     wire                                baudrate_clk_en_tx;
@@ -98,6 +104,8 @@ module uart_peripheral
         assign data_out = data_out_rx;
     end 
     assign RX_available = ~transaction_en_rx;   // RX is IDLE (RX is not in transaction)
+    
+//    (* dont_touch = "yes" *)     
     TX_controller
         #(
         ) tx_controller (
@@ -116,6 +124,8 @@ module uart_peripheral
         .parity_option(parity_option_tx),
         .rst_n(rst_n)
         );
+    
+//    (* dont_touch = "yes" *)     
     RX_controller
         #(
         ) rx_controller (
@@ -136,6 +146,8 @@ module uart_peripheral
         
         .rst_n(rst_n)
         );
+    
+//    (* dont_touch = "yes" *)     
     baudrate_generator
         #(
         .INTERNAL_CLOCK(INTERNAL_CLOCK),
@@ -150,6 +162,8 @@ module uart_peripheral
         
         .rst_n(rst_n)
         );
+    
+//    (* dont_touch = "yes" *)         
     baudrate_generator
         #(
         .INTERNAL_CLOCK(INTERNAL_CLOCK),
@@ -163,40 +177,50 @@ module uart_peripheral
         .baudrate_mux(baudrate_mux_rx),
         .rst_n(rst_n)
         );
-    fifo_module
+//    (* dont_touch = "yes" *)     
+    sync_fifo
         #(
-        .DEPTH(FIFO_DEPTH)
+        .FIFO_DEPTH(FIFO_DEPTH)
         ) fifo_tx (
-        .data_bus_in(data_in),
-        .data_bus_out(data_in_tx),
-        .write_ins(TX_use),
-        .read_ins(fifo_tx_rd),
+        .clk(clk),
+        .data_in(data_in),
+        .data_out(data_in_tx),
+        .wr_req(TX_use),
+        .rd_req(fifo_tx_rd),
         .empty(fifo_tx_empty),
         .full(fifo_tx_full),
         .almost_empty(),
         .almost_full(),
-        .reach_limit(),
-        .enable(),
+//        .counter_threshold(),
+//        .counter_threshold_flag(),
         .rst_n(rst_n)
         );   
-    if(RX_FLAG_TYPE) begin    
-    fifo_module
+        
+    if(RX_FLAG_TYPE) begin  
+//    (* dont_touch = "yes" *)   
+    sync_fifo
         #(
-        .DEPTH(FIFO_DEPTH)
+        .FIFO_DEPTH(FIFO_DEPTH)
         ) fifo_rx (
-        .data_bus_in(data_out_rx),
-        .data_bus_out(data_out_fifo),
-        .write_ins(fifo_rx_wr),
-        .read_ins(RX_use),
+        .clk(clk),
+        .data_in(data_out_rx),
+        .data_out(data_out_fifo),
+        .wr_req(fifo_rx_wr),
+        .rd_req(RX_use),
         .empty(fifo_rx_empty),
         .full(fifo_rx_full),
         .almost_empty(),
         .almost_full(),
-        .reach_limit(),
-        .enable(),
+//        .counter_threshold(),
+//        .counter_threshold_flag(),
         .rst_n(rst_n)
         ); 
-    end               
+    
+    end        
+    `ifdef DEBUG
+//    assign baudrate_clk_en_rx_wire = baudrate_clk_en_rx;
+//    assign RX_full = baudrate_clk_en_rx;
+    `endif       
 endmodule
 // Wire out module
 //uart_peripheral 

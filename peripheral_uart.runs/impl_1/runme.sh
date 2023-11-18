@@ -41,7 +41,7 @@ EAStep()
 }
 
 # pre-commands:
-/bin/touch .init_design.begin.rst
-EAStep vivado -log uart_peripheral.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source uart_peripheral.tcl -notrace
+/bin/touch .write_bitstream.begin.rst
+EAStep vivado -log timing_uart_peripheral_file.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source timing_uart_peripheral_file.tcl -notrace
 
 

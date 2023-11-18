@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log uart_peripheral.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source uart_peripheral.tcl
+EAStep vivado -log timing_uart_peripheral_file.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source timing_uart_peripheral_file.tcl

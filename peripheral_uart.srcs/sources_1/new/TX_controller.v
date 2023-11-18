@@ -71,6 +71,9 @@ module TX_controller
     wire                            cur_bit;
     reg [DATA_COUNTER_WIDTH - 1:0]  data_counter;
     wire[DATA_COUNTER_WIDTH - 1:0]  data_counter_decr;
+    wire[DATA_COUNTER_WIDTH - 1:0]  buffer_pointer_msb_first;
+    wire[DATA_COUNTER_WIDTH - 1:0]  buffer_pointer_lsb_first;
+    wire[DATA_COUNTER_WIDTH - 1:0]  buffer_pointer;
     reg                             stop_bit_counter;
     wire                            stop_bit_counter_decr;
     
@@ -124,11 +127,14 @@ module TX_controller
         endcase
     end 
     assign TX = TX_reg;
-    assign cur_bit = tx_buffer[data_counter];
+    assign cur_bit = tx_buffer[buffer_pointer];
     assign data_counter_decr = data_counter - 1;
     assign stop_bit_counter_decr = ~stop_bit_counter;
     assign transaction_en = transaction_start_toggle ^ transaction_stop_toggle;
     assign fifo_rd = fifo_rd_reg;
+    assign buffer_pointer_msb_first = data_counter;
+    assign buffer_pointer_lsb_first = ~data_counter;
+    assign buffer_pointer = (1'b1) ? buffer_pointer_lsb_first : buffer_pointer_msb_first;
     always @(posedge clk) begin
         if(!rst_n) begin
             tx_state <= IDLE_STATE;

@@ -1,11 +1,9 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  \
-"../../../../peripheral_uart.srcs/sources_1/imports/RF_Transceiver-main/fifo_module.v" \
-
 sv xil_defaultlib  \
 "../../../../peripheral_uart.srcs/sources_1/new/RX_controller.v" \
 "../../../../peripheral_uart.srcs/sources_1/new/TX_controller.v" \
 "../../../../peripheral_uart.srcs/sources_1/new/baudrate_generator.sv" \
+"../../../../../fifo_sync/fifo_sync.srcs/sources_1/new/sync_fifo.sv" \
 "../../../../peripheral_uart.srcs/sources_1/new/uart_peripheral.sv" \
 "../../../../peripheral_uart.srcs/sim_1/new/uart_peripheral_tb.sv" \
 
