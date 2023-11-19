@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sat Nov 18 21:52:43 2023
+| Date         : Sun Nov 19 20:50:43 2023
 | Host         : LAPTOP-UGQ0I2VJ running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file timing_uart_peripheral_file_control_sets_placed.rpt
 | Design       : timing_uart_peripheral_file
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    16 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    73 |
+| Unused register locations in slices containing registers |    74 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -41,10 +41,10 @@ Table of Contents
 +--------------------+-------+
 | Total control sets |    16 |
 | >= 0 to < 4        |     9 |
-| >= 4 to < 6        |     0 |
+| >= 4 to < 6        |     1 |
 | >= 6 to < 8        |     2 |
 | >= 8 to < 10       |     2 |
-| >= 10 to < 12      |     1 |
+| >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
 | >= 16              |     2 |
@@ -58,37 +58,37 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              11 |            6 |
+| No           | No                    | No                     |               8 |            5 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              46 |           15 |
+| No           | Yes                   | No                     |              53 |           18 |
 | Yes          | No                    | No                     |               8 |            2 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              30 |           14 |
+| Yes          | Yes                   | No                     |              25 |           16 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------+----------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
-|  Clock Signal  |                    Enable Signal                   |              Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------+----------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
-|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[7]_i_2_n_0 | rst_IBUF                                   |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[3]_i_1_n_0 | rst_IBUF                                   |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[0]_i_1_n_0 | rst_IBUF                                   |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[5]_i_1_n_0 | rst_IBUF                                   |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[1]_i_1_n_0 | rst_IBUF                                   |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[6]_i_1_n_0 | rst_IBUF                                   |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[4]_i_1_n_0 | rst_IBUF                                   |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG | uart_peripheral/rx_controller/rx_buffer[2]_i_1_n_0 | rst_IBUF                                   |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG | uart_peripheral/tx_controller/TX_reg_i_2_n_0       | rst_IBUF                                   |                1 |              2 |         2.00 |
-|  clk_IBUF_BUFG | uart_peripheral/fifo_tx/rd_addr_reg0               | uart_peripheral/fifo_tx/wr_addr[5]_i_1_n_0 |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG | uart_peripheral/fifo_tx/wr_addr_reg0               | uart_peripheral/fifo_tx/wr_addr[5]_i_1_n_0 |                2 |              6 |         3.00 |
-|  clk_IBUF_BUFG | uart_peripheral/tx_controller/tx_buffer[7]_i_1_n_0 |                                            |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG | buffer                                             | rst_IBUF                                   |                1 |              8 |         8.00 |
-|  clk_IBUF_BUFG |                                                    |                                            |                6 |             11 |         1.83 |
-|  clk_IBUF_BUFG | uart_peripheral/fifo_tx/p_1_in__0                  |                                            |                2 |             16 |         8.00 |
-|  clk_IBUF_BUFG |                                                    | rst_IBUF                                   |               15 |             46 |         3.07 |
-+----------------+----------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
++----------------+------------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                        Enable Signal                       |              Set/Reset Signal              | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+------------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/p_1_in[0]                    | rst_IBUF                                   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/p_1_in[1]                    | rst_IBUF                                   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/p_1_in[2]                    | rst_IBUF                                   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/p_1_in[3]                    | rst_IBUF                                   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/p_1_in[4]                    | rst_IBUF                                   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/p_1_in[5]                    | rst_IBUF                                   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/p_1_in[6]                    | rst_IBUF                                   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/p_1_in[7]                    | rst_IBUF                                   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/tx_controller/TX_reg_i_2_n_0               | rst_IBUF                                   |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | uart_peripheral/rx_controller/transaction_state[1]_i_1_n_0 | rst_IBUF                                   |                2 |              4 |         2.00 |
+|  clk_IBUF_BUFG | uart_peripheral/fifo_tx/rd_addr_reg0                       | uart_peripheral/fifo_tx/wr_addr[5]_i_1_n_0 |                2 |              6 |         3.00 |
+|  clk_IBUF_BUFG | uart_peripheral/fifo_tx/wr_addr_reg0                       | uart_peripheral/fifo_tx/wr_addr[5]_i_1_n_0 |                3 |              6 |         2.00 |
+|  clk_IBUF_BUFG |                                                            |                                            |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG | uart_peripheral/tx_controller/tx_buffer[7]_i_1_n_0         |                                            |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG | uart_peripheral/fifo_tx/p_1_in__0                          |                                            |                2 |             16 |         8.00 |
+|  clk_IBUF_BUFG |                                                            | rst_IBUF                                   |               18 |             53 |         2.94 |
++----------------+------------------------------------------------------------+--------------------------------------------+------------------+----------------+--------------+
 
 

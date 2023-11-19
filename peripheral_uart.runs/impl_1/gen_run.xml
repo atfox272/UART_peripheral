@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1700319025">
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1700401756">
   <File Type="BITSTR-BMM" Name="timing_uart_peripheral_file_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="timing_uart_peripheral_file_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="timing_uart_peripheral_file_timing_summary_init.rpt"/>

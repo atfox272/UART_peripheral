@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Sat Nov 18 21:53:14 2023
+| Date         : Sun Nov 19 20:51:10 2023
 | Host         : LAPTOP-UGQ0I2VJ running 64-bit major release  (build 9200)
 | Command      : report_bus_skew -warn_on_violation -file timing_uart_peripheral_file_bus_skew_postroute_physopted.rpt -pb timing_uart_peripheral_file_bus_skew_postroute_physopted.pb -rpx timing_uart_peripheral_file_bus_skew_postroute_physopted.rpx
 | Design       : timing_uart_peripheral_file

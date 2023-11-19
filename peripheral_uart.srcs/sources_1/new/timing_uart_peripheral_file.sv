@@ -21,7 +21,6 @@
 //`define TX_TESTING
 //`define RX_TESTING
 `define FULLDUPLEX_TESTING
- (* dont_touch = "yes" *)    
 module timing_uart_peripheral_file
     #(
     parameter INTERNAL_CLOCK   = 125000000
@@ -33,10 +32,9 @@ module timing_uart_peripheral_file
     output  TX,
     
 //    `ifdef FULLDUPLEX_TESTING
-    output  TX_sub,
-    output  RX_flag_sub,
+    output  RX_sub,
     output  RX_available_sub,
-//    output  RX_full,
+    output [2:0]  debug,              // AUX_2 in logic analyzer
 //    `endif
     
     input rst
@@ -48,14 +46,14 @@ module timing_uart_peripheral_file
     
     localparam WAITING_TIME     = 1000000;    
     
-    (* keep = "true" *)wire [7:0]   data_in;
-    (* keep = "true" *)wire [7:0]   data_out;
-    (* keep = "true" *)reg         TX_use;
-    (* keep = "true" *)reg         RX_use;
+    wire [7:0]   data_in;
+    wire [7:0]   data_out;
+    reg         TX_use;
+    reg         RX_use;
 //    wire        send_flag;
-    (* keep = "true" *)wire        TX_available;
-    (* keep = "true" *)wire        RX_flag;
-    (* keep = "true" *)wire        RX_full;
+    wire        TX_available;
+    wire        RX_flag;
+    wire        RX_full;
     wire RX_available;
 // (* dont_touch = "yes" *)    
 uart_peripheral 
@@ -66,8 +64,8 @@ uart_peripheral
         .clk(clk),
         .RX(RX),
         .TX(TX),
-        .RX_config_register(BD115200_8N1),
-        .TX_config_register(BD115200_8N1),
+        .RX_config_register(BD9600_8N1),
+        .TX_config_register(BD9600_8N1),
         // TX interface 
         .data_in(data_in),
         .TX_use(TX_use),
@@ -78,7 +76,7 @@ uart_peripheral
         .data_out(data_out),
         .RX_use(RX_use),
         .RX_flag(RX_flag),
-//        .RX_full(RX_full),
+        .debug(debug),
         .RX_available(RX_available),
         
         .rst_n(~rst)
@@ -127,16 +125,15 @@ uart_peripheral
     `endif
     
     `ifdef FULLDUPLEX_TESTING
-    reg [1:0] state;    
-    reg [7:0] buffer;
+    (* keep = "true" *)reg [1:0] state;    
+    (* keep = "true" *)reg [7:0] buffer;
     reg baudrate_clk_en_rx_toggle;
     localparam IDLE_STATE = 0;
     localparam INIT_STATE = 3;
     localparam SEND_STATE = 1;
     localparam CONFIRM_SEND_STATE = 2;
-    assign RX_flag_sub = baudrate_clk_en_rx_toggle;
     assign RX_available_sub = ~RX_available;
-    assign TX_sub = TX;
+    assign RX_sub = RX;
     assign data_in = buffer;    
     always @(posedge clk) begin
         if(rst) begin

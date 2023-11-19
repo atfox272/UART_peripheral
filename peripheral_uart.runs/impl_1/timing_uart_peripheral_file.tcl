@@ -115,6 +115,10 @@ proc step_failed { step } {
 OPTRACE "impl_1" END { }
 }
 
+set_msg_config -id {HDL 9-1061} -limit 100000
+set_msg_config -id {HDL 9-1654} -limit 100000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 
 OPTRACE "impl_1" START { ROLLUP_1 }
 OPTRACE "Phase: Write Bitstream" START { ROLLUP_AUTO }
@@ -124,6 +128,8 @@ set ACTIVE_STEP write_bitstream
 set rc [catch {
   create_msg_db write_bitstream.pb
   set_param chipscope.maxJobs 2
+  set_param synth.incrementalSynthesisCache C:/Users/atfox/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-12804-LAPTOP-UGQ0I2VJ/incrSyn
+  set_param xicom.use_bs_reader 1
   open_checkpoint timing_uart_peripheral_file_postroute_physopt.dcp
   set_property webtalk.parent_dir L:/Projects/peripheral_uart/peripheral_uart.cache/wt [current_project]
 set_property TOP timing_uart_peripheral_file [current_fileset]

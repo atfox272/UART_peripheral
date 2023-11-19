@@ -1,3 +1,4 @@
+`define DEBUG
 module RX_controller
     #(
     parameter DATA_WIDTH = 8,
@@ -45,6 +46,10 @@ module RX_controller
     output logic                        valid_data_flag,
     
     input   rst_n
+    
+    `ifdef DEBUG
+    ,output [2:0] debug
+    `endif
     );
     
     localparam IDLE_STATE   = 0;
@@ -53,14 +58,14 @@ module RX_controller
     // Transaction state
     localparam START_BIT_STATE  = 1;
     localparam DATA_STATE       = 2;
-    localparam PARITY_STATE     = 3;
-    localparam STOP_STATE       = 4;
+    localparam PARITY_STATE     = 4;
+    localparam STOP_STATE       = 3;
     
     // Function bit
     localparam START_BIT    = 1'b0;
     localparam STOP_BIT     = 1'b1;
     
-    reg [2:0]                       rx_state;
+    reg                             rx_state;
     reg [2:0]                       transaction_state;
     reg [DATA_WIDTH - 1:0]          rx_buffer;
     reg                             parity_buffer;
@@ -211,5 +216,8 @@ module RX_controller
             endcase 
         end 
     end 
-    
+    `ifdef DEBUG
+        assign debug[1:0] = transaction_state[1:0];
+        assign debug[2] = rx_state;
+    `endif    
 endmodule

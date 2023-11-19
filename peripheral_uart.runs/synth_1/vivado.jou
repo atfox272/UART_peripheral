@@ -2,8 +2,8 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Nov 18 21:50:28 2023
-# Process ID: 28032
+# Start of session at: Sun Nov 19 20:49:18 2023
+# Process ID: 15560
 # Current directory: L:/Projects/peripheral_uart/peripheral_uart.runs/synth_1
 # Command line: vivado.exe -log timing_uart_peripheral_file.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source timing_uart_peripheral_file.tcl
 # Log file: L:/Projects/peripheral_uart/peripheral_uart.runs/synth_1/timing_uart_peripheral_file.vds

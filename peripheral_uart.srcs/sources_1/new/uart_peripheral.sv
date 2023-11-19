@@ -50,7 +50,7 @@ module uart_peripheral
     
     `ifdef DEBUG
 //    ,output                      baudrate_clk_en_rx_wire
-//    ,output                      RX_full
+    ,output [2:0] debug
     `endif
     );
     // Baudrate generator TX
@@ -145,6 +145,10 @@ module uart_peripheral
         .parity_option(parity_option_rx),
         
         .rst_n(rst_n)
+        
+        `ifdef DEBUG
+        ,.debug(debug)
+        `endif
         );
     
 //    (* dont_touch = "yes" *)     
@@ -219,7 +223,7 @@ module uart_peripheral
     end        
     `ifdef DEBUG
 //    assign baudrate_clk_en_rx_wire = baudrate_clk_en_rx;
-//    assign RX_full = baudrate_clk_en_rx;
+//    assign debug = debug_1;
     `endif       
 endmodule
 // Wire out module
